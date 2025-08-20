@@ -1,0 +1,80 @@
+# === Ruby / Rails ===
+*.rbc
+*.rbo
+*.gem
+*.rake
+*.log
+*.pid
+*.seed
+*.pid.lock
+*.swp
+*.swo
+*.db
+*.sqlite3
+*.sqlite3-journal
+*.sass-cache
+*.class
+
+# === Rails artefatos ===
+/log/*
+/tmp/*
+/tmp/pids/*
+/tmp/cache/*
+/tmp/sockets/*
+/public/system/*
+/public/uploads/*
+/storage/*
+/coverage/*
+/spec/examples.txt
+/db/*.sqlite3
+/db/*.sqlite3-journal
+
+# === Credenciais ===
+config/master.key
+config/credentials.yml.enc
+
+# === Bundler ===
+.bundle/
+/vendor/bundle
+
+# === Node (se usar yarn/npm no front ou assets) ===
+node_modules/
+
+# === Docker ===
+/docker-entrypoint-initdb.d/*
+/.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# === VSCode / IDEs ===
+.vscode/
+.idea/
+*.iml
+
+# === macOS ===
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# === Tests / Coverage ===
+/coverage/
+/spec/tmp/
+/spec/reports/
+/spec/examples.txt
+
+# === Byebug ===
+.byebug_history
+
+# === Pry ===
+.pry_history
+
+# === Yarn / NPM ===
+yarn-debug.log*
+.yarn-integrity
+npm-debug.log*
+
+# === Others ===
+/.sass-cache
+/.byebug_history
