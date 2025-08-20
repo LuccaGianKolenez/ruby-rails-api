@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  url: <%= ENV.fetch("DATABASE_URL", "") %>
+  pool: 10
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+  url: <%= ENV.fetch("DATABASE_URL", "postgres://postgres:postgres@db:5432/rails_api_test") %>
+
+production:
+  <<: *default
