@@ -1,0 +1,29 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: rails_api_dev
+    ports:
+      - "5432:5432"
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+
+  api:
+    build: .
+    depends_on:
+      - db
+    environment:
+      RAILS_ENV: development
+      DATABASE_URL: postgres://postgres:postgres@db:5432/rails_api_dev
+      SECRET_KEY_BASE: devsecretkeybase
+      JWT_SECRET: supersecretjwt
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    command: bash script/dev-start.sh
+
+volumes:
+  dbdata:
